@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+	  .red-message { font-size: 1.3em; font-weight: bold; color: red;}
+	  .green-message { font-size: 1.3em; font-weight: bold; color: green;}
     </style>
   </head>
 <body>
@@ -19,13 +21,18 @@
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control"
 			 ng-model="list">
+			 <div>Note: Empty item, i.e., , , is not considered as an item towards to the count</div>
          </div>
          <div class="form-group">
              <button ng-click = "checkLunch()" class="btn btn-default">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div class="form-group red-message">
            <!-- Your message can go here. -->
-		   {{recommendMessage}}
+		   {{recommendMessageRed}}
+         </div>
+		  <div class="form-group green-message">
+           <!-- Your message can go here. -->
+		   {{recommendMessageGreen}}
          </div>
    </div>
 
